@@ -46,8 +46,8 @@ public class LineUp extends JComponent //implements Runnable
 
       ground = new Floor();
 
-      Thread t1 = new Thread(ground);
-      t1.start();
+      //Thread t1 = new Thread(ground);
+      //t1.start();
       Thread t2 = new Thread(figure2);
       t2.start();
       //Thread t3 = new Thread(figure3);
@@ -76,8 +76,8 @@ public class LineUp extends JComponent //implements Runnable
       figure4.draw (page);
       //ground.draw(page);
 
-      //Thread t1 = new Thread(ground);
-      //t1.start();
+      Thread t1 = new Thread(ground);
+      t1.start();
 
       /*
       int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
@@ -102,7 +102,7 @@ public class LineUp extends JComponent //implements Runnable
 
    public void nextFrame()
    {
-       //figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure2.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure3.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure4.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));

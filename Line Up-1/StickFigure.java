@@ -87,7 +87,7 @@ public class StickFigure extends JComponent implements Runnable
                                      //y needs to move, not height.
 
           page.setColor (color);
-          //                 x     y    h  w
+          //                 x     y    h  w x,y is the starting point H,w is how big the shape is
           page.drawOval(baseX-10, top, 20, 20);// head
 
           page.drawLine(baseX, top+20, baseX, baseY-30);// trunk

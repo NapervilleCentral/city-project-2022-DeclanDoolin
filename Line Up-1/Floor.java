@@ -66,8 +66,14 @@ public class Floor extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)
        {
+          Random num = new Random();
           page.setColor(Color.black);
           page.fillRect(x, y, w, h);
+          Color window = new Color(num.nextInt(265), num.nextInt(264), num.nextInt(265));
+          page.setColor(window);
+          page.drawRect(x + 10,y+2,10,10);  
+          //for move x  
+          page.fillRect(x+10,y+7, 10, 10);
        }
        
     public void run()

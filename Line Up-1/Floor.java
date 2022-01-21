@@ -76,7 +76,7 @@ public class Floor extends JComponent implements Runnable
           page.fillRect(x+10,y+7, 10, 10);
        }
        
-    public void run()
+    public void run()//the thread will call the run object  
     {
         int running  = 0;
     while(true){

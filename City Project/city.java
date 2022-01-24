@@ -16,7 +16,11 @@ public class city extends JComponent //implements Runnable
    //Graphics page;
 
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
-   private Building figure1,figure2, figure3, figure4;
+   private Building figure1,figure2, figure3, figure4, figure5, figure6;
+   private Road r1;
+   private yellowThings y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13;
+   private sky s1;
+   private windows wb1;
    
    private int running = 0;
 
@@ -27,18 +31,39 @@ public class city extends JComponent //implements Runnable
    {                   //Different than start.
       int h1,h2,h3,h4;  // heights of stick figures
 
-      h1 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h2 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h3 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h4 = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      h1 = HEIGHT_MIN + 50;
+      h2 = HEIGHT_MIN + 80;
+      h3 = HEIGHT_MIN + 75;
+      h4 = HEIGHT_MIN + 65;
 
 
-      figure1 = new Building (100, 150, Color.gray, h2);
+      figure1 = new Building (100, 300, Color.gray, h2);
       //x, y, color, height
+      Color lb = new Color(173, 216, 230);
+      figure2 = new Building(190, 300, Color.gray, h1);
+      figure3 = new Building(290, 300, Color.gray, h4);
+      figure4 = new Building(390, 300, Color.gray, h2);
+      figure5 = new Building(490, 300, Color.gray, h1);
+      figure6 = new Building(0, 300, Color.gray, h3);
+      r1 = new Road(0 ,400, Color.black, 100);
+      y1 = new yellowThings(0, 330, Color.yellow, 5);
+      y2 = new yellowThings(50, 330, Color.yellow, 5);
+      y3 = new yellowThings(100, 330, Color.yellow, 5);
+      y4 = new yellowThings(150, 330, Color.yellow, 5);
+      y5 = new yellowThings(200, 330, Color.yellow, 5);
+      y6 = new yellowThings(250, 330, Color.yellow, 5);
+      y7 = new yellowThings(300, 330, Color.yellow, 5);
+      y8 = new yellowThings(350, 330, Color.yellow, 5);
+      y9 = new yellowThings(400, 330, Color.yellow, 5);
+      y10 = new yellowThings(450, 330, Color.yellow, 5);
+      y11= new yellowThings(500, 330, Color.yellow, 5);
+      y12 = new yellowThings(550, 330, Color.yellow, 5);
+      y13= new yellowThings(600, 330, Color.yellow, 5);
+      s1= new sky(0,400, lb, 400);
       
-      figure2 = new Building(180, 150, Color.gray, h1);
-      figure3 = new Building(280, 150, Color.gray, h4);
-      figure4 = new Building(380, 150, Color.gray, h2);
+      
+         
+        
       
 
      
@@ -50,7 +75,7 @@ public class city extends JComponent //implements Runnable
       //Thread t3 = new Thread(figure3);
       //t3.start();
 
-
+      setBackground(Color.blue);
       //setBackground (Color.black); //sets the color of background
       //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window
 
@@ -67,11 +92,29 @@ public class city extends JComponent //implements Runnable
         Graphics2D page = (Graphics2D) g;
        //page = this.page;
      
+      s1.draw(page);
       figure1.draw (page);
       figure2.draw (page);
       figure3.draw (page);
       figure4.draw (page);
+      figure5.draw (page);
+      figure6.draw(page);
       //ground.draw(page);
+      r1.draw(page);
+      y1.draw(page);
+      y2.draw(page);
+      y3.draw(page);
+      y4.draw(page);
+      y5.draw(page);
+      y6.draw(page);
+      y7.draw(page);
+      y8.draw(page);
+      y9.draw(page);
+      y10.draw(page);
+      y11.draw(page);
+      y12.draw(page);
+      y13.draw(page);
+      
 
       /*Thread t1 = new Thread(ground);
       t1.start();

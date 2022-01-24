@@ -51,6 +51,7 @@ public class Building extends JComponent implements Runnable
           page.drawLine(baseX, top, baseX+80, top);
           page.drawLine(baseX+80, top, baseX+80, baseY);
           page.drawLine(baseX+80, baseY, baseX, baseY);
+          page.fillRect(baseX, baseY, 80, -height);
           
           
 

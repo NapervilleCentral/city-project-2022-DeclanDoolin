@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class windows here.
+ * Write a description of class Sun here.
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -11,7 +11,7 @@ import java.awt.*;
     import java.awt.Graphics;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
-public class windows extends JComponent implements Runnable
+public class Sun extends JComponent implements Runnable
 {
     private int baseX;     
     private int baseY;     
@@ -19,7 +19,7 @@ public class windows extends JComponent implements Runnable
     private int height;    
     Random generator = new Random();
     
-    public windows(int x, int y, Color c, int h){
+    public Sun(int x, int y, Color c, int h){
         baseX = x;
         baseY = y;
         color = c;
@@ -38,10 +38,7 @@ public class windows extends JComponent implements Runnable
        {
            page.setColor (color);
            //page.drawLine(baseX, baseY, baseY-height, baseX);
-           page.drawLine(baseX, baseY-height, baseX+100, baseY-height);
-           page.drawLine(baseX+10, baseY-height,baseX+100,baseY);
-           page.drawLine(baseX+10, baseY, baseX, baseY);
-           page.fillRect(baseX,baseY,100,-height);
+           page.drawOval
            
           
           

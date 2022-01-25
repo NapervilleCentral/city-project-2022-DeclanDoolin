@@ -20,7 +20,7 @@ public class city extends JComponent //implements Runnable
    private Road r1;
    private yellowThings y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13;
    private sky s1;
-   private windows wb1;
+   private Sun sun1;
    
    private int running = 0;
 
@@ -29,22 +29,18 @@ public class city extends JComponent //implements Runnable
    //-----------------------------------------------------------------
    public city() //init in applet is like constructor; runs only once
    {                   //Different than start.
-      int h1,h2,h3,h4;  // heights of stick figures
+      
 
-      h1 = HEIGHT_MIN + 50;
-      h2 = HEIGHT_MIN + 80;
-      h3 = HEIGHT_MIN + 75;
-      h4 = HEIGHT_MIN + 65;
+      
 
-
-      figure1 = new Building (100, 300, Color.gray, h2);
+      figure1 = new Building (100, 300, Color.gray, 170);
       //x, y, color, height
       Color lb = new Color(173, 216, 230);
-      figure2 = new Building(190, 300, Color.gray, h1);
-      figure3 = new Building(290, 300, Color.gray, h4);
-      figure4 = new Building(390, 300, Color.gray, h2);
-      figure5 = new Building(490, 300, Color.gray, h1);
-      figure6 = new Building(0, 300, Color.gray, h3);
+      figure2 = new Building(190, 300, Color.gray, 220);
+      figure3 = new Building(290, 300, Color.gray, 130);
+      figure4 = new Building(390, 300, Color.gray, 300);
+      figure5 = new Building(490, 300, Color.gray, 250);
+      figure6 = new Building(0, 300, Color.gray, 190);
       r1 = new Road(0 ,400, Color.black, 100);
       y1 = new yellowThings(0, 330, Color.yellow, 5);
       y2 = new yellowThings(50, 330, Color.yellow, 5);

@@ -53,9 +53,21 @@ public class Building extends JComponent implements Runnable
           page.drawLine(baseX+80, baseY, baseX, baseY);
           page.fillRect(baseX, baseY, 80, -height);
           
+          Color window = new Color(87, 126, 189);
+          for(int i = 40; i < height-8; i+=15){
+              for(int j = baseX+5; j < baseX+70; j += 15){
+                  
+                  page.setColor(window);
+                  page.fillRect(baseX+j, baseY-i, 10, 10);
+                  
+                }
+            }
+            
+          
           
 
        }
+       
        public void run()
         {
         while(true){
@@ -66,7 +78,6 @@ public class Building extends JComponent implements Runnable
 
             System.out.print(height);
         }
-
         }
         
 }

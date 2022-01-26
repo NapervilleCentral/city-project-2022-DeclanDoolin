@@ -38,11 +38,11 @@ public class Sun extends JComponent implements Runnable
        {
            page.setColor (color);
            //page.drawLine(baseX, baseY, baseY-height, baseX);
-           page.drawOval
+           page.drawOval(baseX, baseY, 50 , 40); 
+           page.fillOval(baseX, baseY, 50, 40);
            
           
-          
-          
+       
           
 
        }

@@ -46,18 +46,28 @@ public class Building extends JComponent implements Runnable
 
           
                                     //remember, increase y actually moves closer to bottom
-
+          
           page.drawLine(baseX, baseY, baseX, top);
           page.drawLine(baseX, top, baseX+80, top);
           page.drawLine(baseX+80, top, baseX+80, baseY);
           page.drawLine(baseX+80, baseY, baseX, baseY);
           page.fillRect(baseX, baseY, 80, -height);
           
+          
           Color window = new Color(87, 126, 189);
+          Color night = new Color(250, 255, 51);
+          
+          
           for(int i = 40; i < height-8; i+=15){
-              for(int j = baseX+5; j < baseX+70; j += 15){
+              for(int j = 5; j < 70; j += 15){
+                  int ran = generator.nextInt(2)+1;
+                  if (ran == 1){
+                      page.setColor(window);
+                    }
+                  if (ran == 2){
+                      page.setColor(night);
+                    }
                   
-                  page.setColor(window);
                   page.fillRect(baseX+j, baseY-i, 10, 10);
                   
                 }

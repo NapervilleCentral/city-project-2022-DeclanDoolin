@@ -18,7 +18,6 @@ public class city extends JComponent //implements Runnable
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private Building figure1,figure2, figure3, figure4, figure5, figure6;
    private Road r1;
-   private yellowThings y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13;
    private sky s1;
    private Sun sun1;
    
@@ -32,30 +31,16 @@ public class city extends JComponent //implements Runnable
       
 
       
-
-      figure1 = new Building (100, 300, Color.gray, 170);
-      //x, y, color, height
       Color lb = new Color(173, 216, 230);
+      figure1 = new Building (100, 300, Color.gray, 170);
       figure2 = new Building(190, 300, Color.gray, 220);
       figure3 = new Building(290, 300, Color.gray, 130);
       figure4 = new Building(390, 300, Color.gray, 300);
       figure5 = new Building(490, 300, Color.gray, 250);
       figure6 = new Building(0, 300, Color.gray, 190);
       r1 = new Road(0 ,400, Color.black, 100);
-      y1 = new yellowThings(0, 330, Color.yellow, 5);
-      y2 = new yellowThings(50, 330, Color.yellow, 5);
-      y3 = new yellowThings(100, 330, Color.yellow, 5);
-      y4 = new yellowThings(150, 330, Color.yellow, 5);
-      y5 = new yellowThings(200, 330, Color.yellow, 5);
-      y6 = new yellowThings(250, 330, Color.yellow, 5);
-      y7 = new yellowThings(300, 330, Color.yellow, 5);
-      y8 = new yellowThings(350, 330, Color.yellow, 5);
-      y9 = new yellowThings(400, 330, Color.yellow, 5);
-      y10 = new yellowThings(450, 330, Color.yellow, 5);
-      y11= new yellowThings(500, 330, Color.yellow, 5);
-      y12 = new yellowThings(550, 330, Color.yellow, 5);
-      y13= new yellowThings(600, 330, Color.yellow, 5);
       s1= new sky(0,400, lb, 400);
+      sun1 = new Sun(70, 40, Color.yellow, 100);
       
       
          
@@ -97,19 +82,7 @@ public class city extends JComponent //implements Runnable
       figure6.draw(page);
       //ground.draw(page);
       r1.draw(page);
-      y1.draw(page);
-      y2.draw(page);
-      y3.draw(page);
-      y4.draw(page);
-      y5.draw(page);
-      y6.draw(page);
-      y7.draw(page);
-      y8.draw(page);
-      y9.draw(page);
-      y10.draw(page);
-      y11.draw(page);
-      y12.draw(page);
-      y13.draw(page);
+      sun1.draw(page);
       
 
       /*Thread t1 = new Thread(ground);

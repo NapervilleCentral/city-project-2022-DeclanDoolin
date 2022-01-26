@@ -42,7 +42,11 @@ public class Road extends JComponent implements Runnable
            page.drawLine(baseX+600, baseY-height,baseX+600,baseY);
            page.drawLine(baseX+600, baseY, baseX, baseY);
            page.fillRect(baseX,baseY,600,-height);
-           
+           Color yt = new Color(238, 244, 14);
+          for (int i = 0; i <= 600; i+= 50){
+              page.setColor(yt);
+              page.fillRect(baseX+i,baseY-70,20,5);
+            }
           
           
           

@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Sun here.
+ * Write a description of class cars here.
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -11,7 +11,7 @@ import java.awt.*;
     import java.awt.Graphics;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
-public class Sun extends JComponent implements Runnable
+public class cars extends JComponent implements Runnable
 {
     private int baseX;     
     private int baseY;     
@@ -19,7 +19,7 @@ public class Sun extends JComponent implements Runnable
     private int height;    
     Random generator = new Random();
     
-    public Sun(int x, int y, Color c, int h){
+    public cars(int x, int y, Color c, int h){
         baseX = x;
         baseY = y;
         color = c;
@@ -31,29 +31,42 @@ public class Sun extends JComponent implements Runnable
     }
     public void paintComponent(Graphics g){
         Graphics2D g2 = (Graphics2D) g;
+        
         draw (g2);
     }
     public void draw (Graphics2D page)
        {
            page.setColor (color);
            //page.drawLine(baseX, baseY, baseY-height, baseX);
-           page.drawOval(baseX, baseY, 50 , 40); 
-           page.fillOval(baseX, baseY, 50, 40);
+           page.fillRect(baseX, baseY, baseX, baseY-height);
+           page.setColor(color.gray);
+           page.drawOval(baseX-1, baseY+10, 9, 9);
+           page.fillOval(baseX-1, baseY+10, 9, 9);
+           page.drawOval(baseX+32, baseY+10, 9, 9);
+           page.fillOval(baseX+32, baseY+10, 9, 9);
+           
+           
+           
+           
+           
+          
+          
+          
+          
+
        }
        public void run()
         {
         while(true){
-            int newX = baseX+2;
-            int newY = baseY-1;
+            int newX = baseX+1;
             baseX = newX;
-            baseY = newY;
-
             try{
                 Thread.sleep(17);
             }catch (Exception e){}
+
             System.out.print(baseX);
-            System.out.print(baseY);
         }
+
         }
         
 }

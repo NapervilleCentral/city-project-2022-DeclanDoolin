@@ -20,6 +20,7 @@ public class city extends JComponent //implements Runnable
    private Road r1;
    private sky s1;
    private Sun sun1;
+   private cars c1, c2;
    
    private int running = 0;
 
@@ -40,8 +41,9 @@ public class city extends JComponent //implements Runnable
       figure6 = new Building(0, 300, Color.gray, 190);
       r1 = new Road(0 ,400, Color.black, 100);
       s1= new sky(0,400, lb, 400);
-      sun1 = new Sun(70, 40, Color.yellow, 100);
-      
+      sun1 = new Sun(0, 200, Color.yellow, 0);
+      c1 = new cars(20,305, Color.blue, 295);
+      c2 = new cars(300, 305, Color.yellow, 295);
       
          
         
@@ -49,24 +51,21 @@ public class city extends JComponent //implements Runnable
 
      
 
-      //Thread t1 = new Thread(ground);
-      //t1.start();
-      //Thread t2 = new Thread(figure2);
-      //t2.start();
+      Thread t1 = new Thread(c1);
+      t1.start();
+      Thread t2 = new Thread(sun1);
+      t2.start();
       //Thread t3 = new Thread(figure3);
       //t3.start();
 
-      setBackground(Color.blue);
-      //setBackground (Color.black); //sets the color of background
+      
       //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window
 
-      //figure2.draw(page);
-
-
+      
    }
 
    //-----------------------------------------------------------------
-   //  Paints the stick figures on the applet.
+   //  
    //-----------------------------------------------------------------
    public void paintComponent(Graphics g)
     {
@@ -74,6 +73,7 @@ public class city extends JComponent //implements Runnable
        //page = this.page;
      
       s1.draw(page);
+      sun1.draw(page);
       figure1.draw (page);
       figure2.draw (page);
       figure3.draw (page);
@@ -82,8 +82,9 @@ public class city extends JComponent //implements Runnable
       figure6.draw(page);
       //ground.draw(page);
       r1.draw(page);
-      sun1.draw(page);
       
+      c1.draw(page);
+      c2.draw(page);
 
       /*Thread t1 = new Thread(ground);
       t1.start();

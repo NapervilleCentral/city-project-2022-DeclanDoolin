@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=cars
+comment1.params=x\ y\ c\ h
+comment1.target=cars(int,\ int,\ java.awt.Color,\ int)
+comment2.params=size
+comment2.target=void\ setHeight(int)
+comment3.params=g
+comment3.target=void\ paintComponent(java.awt.Graphics)
+comment4.params=page
+comment4.target=void\ draw(java.awt.Graphics2D)
+comment5.params=
+comment5.target=void\ run()
+numComments=6

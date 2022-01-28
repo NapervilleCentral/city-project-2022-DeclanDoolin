@@ -49,7 +49,7 @@ public class Sun extends JComponent implements Runnable
             baseY = newY;
 
             try{
-                Thread.sleep(17);
+                Thread.sleep(30);
             }catch (Exception e){}
             System.out.print(baseX);
             System.out.print(baseY);

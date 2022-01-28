@@ -36,7 +36,9 @@ public class sky extends JComponent implements Runnable
     }
     public void draw (Graphics2D page)
        {
-           page.setColor (color);
+           Color night = new Color(75, 75, 71);
+           
+           page.setColor(night);
            page.drawLine(baseX, baseY-height, baseX+600, baseY-height);
            page.drawLine(baseX+600, baseY-height,baseX+600,baseY);
            page.drawLine(baseX+600, baseY, baseX, baseY);

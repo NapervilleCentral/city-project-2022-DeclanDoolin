@@ -43,7 +43,7 @@ public class city extends JComponent //implements Runnable
       s1= new sky(0,400, lb, 400);
       sun1 = new Sun(0, 200, Color.yellow, 0);
       c1 = new cars(20,305, Color.blue, 295);
-      c2 = new cars(300, 305, Color.yellow, 295);
+      c2 = new cars(100, 305, Color.yellow, 295);
       
          
         
@@ -55,8 +55,8 @@ public class city extends JComponent //implements Runnable
       t1.start();
       Thread t2 = new Thread(sun1);
       t2.start();
-      //Thread t3 = new Thread(figure3);
-      //t3.start();
+      Thread t3 = new Thread(c2);
+      t3.start();
 
       
       //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window

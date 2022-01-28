@@ -44,16 +44,7 @@ public class cars extends JComponent implements Runnable
            page.fillOval(baseX-1, baseY+10, 9, 9);
            page.drawOval(baseX+32, baseY+10, 9, 9);
            page.fillOval(baseX+32, baseY+10, 9, 9);
-           
-           
-           
-           
-           
-          
-          
-          
-          
-
+ 
        }
        public void run()
         {
@@ -61,7 +52,7 @@ public class cars extends JComponent implements Runnable
             int newX = baseX+1;
             baseX = newX;
             try{
-                Thread.sleep(17);
+                Thread.sleep(40);
             }catch (Exception e){}
 
             System.out.print(baseX);

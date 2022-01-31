@@ -36,23 +36,37 @@ public class cars extends JComponent implements Runnable
     }
     public void draw (Graphics2D page)
        {
+           
            page.setColor (color);
-           //page.drawLine(baseX, baseY, baseY-height, baseX);
-           page.fillRect(baseX, baseY, baseX, baseY-height);
+           int top = baseY - height;
+           page.drawLine(baseX, baseY, baseX, top);
+          page.drawLine(baseX, top, baseX+35, top);
+          page.drawLine(baseX+35, top, baseX+35, baseY);
+          page.drawLine(baseX+35, baseY, baseX, baseY);
+          page.fillRect(baseX, baseY, 35, -height);
+            //Creates the bodys of the cars
            page.setColor(color.gray);
-           page.drawOval(baseX-1, baseY+10, 9, 9);
-           page.fillOval(baseX-1, baseY+10, 9, 9);
-           page.drawOval(baseX+32, baseY+10, 9, 9);
-           page.fillOval(baseX+32, baseY+10, 9, 9);
+           page.drawOval(baseX-1, baseY, 7, 7);
+           page.fillOval(baseX-1, baseY, 7, 7);
+           page.drawOval(baseX+32, baseY, 7, 7);
+           page.fillOval(baseX+32, baseY, 7, 7);
+           //creates the wheels
+           
+           if (baseX > 600){
+               baseX=0;
+               //resets the position after it goes out of frame
+            }
+           }
  
-       }
+       
        public void run()
         {
         while(true){
             int newX = baseX+1;
             baseX = newX;
+            //will keep the car moving forward on the x axis
             try{
-                Thread.sleep(40);
+                Thread.sleep(10);
             }catch (Exception e){}
 
             System.out.print(baseX);

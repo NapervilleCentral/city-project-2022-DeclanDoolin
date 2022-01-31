@@ -14,10 +14,10 @@
  
 public class Building extends JComponent implements Runnable
 {
-    private int baseX;     // center of figure
-    private int baseY;     // floor (bottom of feet)
-    private Color color;   // color of stick figure
-    private int height;    // height of stick figure
+    private int baseX;     
+    private int baseY;    
+    private Color color;  
+    private int height;   
     Random generator = new Random();
     
     public Building(int x, int y, Color c, int h){
@@ -37,35 +37,26 @@ public class Building extends JComponent implements Runnable
     }
     public void draw (Graphics2D page)
        {
-          int top = baseY - height;  // top of head
-                                     //y needs to move, not height.
-
+          int top = baseY - height;      
           page.setColor (color);
-          //                 x     y    h  w x,y is the starting point H,w is how big the shape is
-          
-
-          
-                                    //remember, increase y actually moves closer to bottom
-          
           page.drawLine(baseX, baseY, baseX, top);
           page.drawLine(baseX, top, baseX+80, top);
           page.drawLine(baseX+80, top, baseX+80, baseY);
           page.drawLine(baseX+80, baseY, baseX, baseY);
           page.fillRect(baseX, baseY, 80, -height);
-          
-          
+          //draws each building
           Color window = new Color(87, 126, 189);
           Color night = new Color(250, 255, 51);
-          
-          
-          for(int i = 40; i < height-8; i+=15){
-              for(int j = 5; j < 70; j += 15){
-                  int ran = generator.nextInt(2)+1;
+          //Sets up the different window colors
+
+          for(int i = 40; i < height-8; i+=15){//loop for y
+              for(int j = 5; j < 70; j += 15){//loop for x
+                  int ran = generator.nextInt(2)+1;//to choose colors
                   if (ran == 1){
-                      page.setColor(window);
+                      page.setColor(window);//1 = light
                     }
                   if (ran == 2){
-                      page.setColor(night);
+                      page.setColor(night);//2 = yellow
                     }
                   
                   page.fillRect(baseX+j, baseY-i, 10, 10);

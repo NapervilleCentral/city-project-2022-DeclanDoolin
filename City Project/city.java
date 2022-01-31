@@ -1,37 +1,34 @@
-
+//Declan Doolin
 import java.awt.*;
     import java.util.*;
-
     import java.awt.Graphics;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 
 public class city extends JComponent //implements Runnable
 {
-   private final int APPLET_WIDTH = 400;    //Size constants
+   private final int APPLET_WIDTH = 400;    
    private final int APPLET_HEIGHT = 150;
    private final int HEIGHT_MIN = 100;
    private final int VARIANCE = 45;
    Random generator = new Random();
-   //Graphics page;
+  
 
-   //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private Building figure1,figure2, figure3, figure4, figure5, figure6;
    private Road r1;
    private sky s1;
    private Sun sun1;
-   private cars c1, c2;
+   private cars c1, c2, c3;
+   
    
    private int running = 0;
 
    //-----------------------------------------------------------------
-   //  Creates several stick figures with varying characteristics.
+   //  Creates several cityscape pieces
    //-----------------------------------------------------------------
    public city() //init in applet is like constructor; runs only once
    {                   //Different than start.
-      
 
-      
       Color lb = new Color(173, 216, 230);
       figure1 = new Building (100, 300, Color.gray, 170);
       figure2 = new Building(190, 300, Color.gray, 220);
@@ -42,14 +39,11 @@ public class city extends JComponent //implements Runnable
       r1 = new Road(0 ,400, Color.black, 100);
       s1= new sky(0,400, lb, 400);
       sun1 = new Sun(0, 200, Color.yellow, 0);
-      c1 = new cars(20,305, Color.blue, 295);
-      c2 = new cars(100, 305, Color.yellow, 295);
+      c1 = new cars(20,315, Color.blue, 10);
+      c2 = new cars(175, 315, Color.yellow, 10);
+      c3 = new cars(300, 315, Color.green, 10);
+      //creates all parts of cityscape
       
-         
-        
-      
-
-     
 
       Thread t1 = new Thread(c1);
       t1.start();
@@ -57,10 +51,9 @@ public class city extends JComponent //implements Runnable
       t2.start();
       Thread t3 = new Thread(c2);
       t3.start();
-
-      
-      //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window
-
+      Thread t4 = new Thread(c3);
+      t4.start();
+      //threads of each animated piece
       
    }
 
@@ -70,7 +63,7 @@ public class city extends JComponent //implements Runnable
    public void paintComponent(Graphics g)
     {
         Graphics2D page = (Graphics2D) g;
-       //page = this.page;
+       
      
       s1.draw(page);
       sun1.draw(page);
@@ -80,46 +73,17 @@ public class city extends JComponent //implements Runnable
       figure4.draw (page);
       figure5.draw (page);
       figure6.draw(page);
-      //ground.draw(page);
       r1.draw(page);
-      
       c1.draw(page);
       c2.draw(page);
-
-      /*Thread t1 = new Thread(ground);
-      t1.start();
-
-      /*
-      int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure1.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure2.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure3.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure4.setHeight(newHeight);
-      */
-      //try{
-          //pause program for quarter-sec (in miliseconds)
-          //Thread.sleep(250);
-        //}
-      //catch(InterruptedException e){}
-
+      c3.draw(page);
+      //draws each part of the cityscape
       
-
-      //repaint(); //IMPORTANT LINE
    }
 
    public void nextFrame()
    {
-       //figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure2.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure3.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure4.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //running ++;
-       //ground.setX(running);
-       //Thread t1 = new Thread(ground);
-       //t1.start();
+      
 
        repaint();
 

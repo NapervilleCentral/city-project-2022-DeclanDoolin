@@ -43,6 +43,7 @@ public class sky extends JComponent implements Runnable
            page.drawLine(baseX+600, baseY-height,baseX+600,baseY);
            page.drawLine(baseX+600, baseY, baseX, baseY);
            page.fillRect(baseX,baseY,600,-height);
+           //Creates a rectangle which is placed in the backround and drawn over
            
           
           

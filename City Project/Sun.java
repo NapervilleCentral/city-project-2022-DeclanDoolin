@@ -36,10 +36,19 @@ public class Sun extends JComponent implements Runnable
     public void draw (Graphics2D page)
        {
            page.setColor (color);
-           //page.drawLine(baseX, baseY, baseY-height, baseX);
+           Color s = new Color(255,255,255);
+
            page.drawOval(baseX, baseY, 50 , 40); 
            page.fillOval(baseX, baseY, 50, 40);
-       }
+           //draws and colors the sun
+           if(baseY<0){
+               baseY=200;
+               baseX=0;
+               page.setColor(s);
+               //resets when out of frame
+            }
+           }
+       
        public void run()
         {
         while(true){
@@ -47,6 +56,7 @@ public class Sun extends JComponent implements Runnable
             int newY = baseY-1;
             baseX = newX;
             baseY = newY;
+            //keeps the sun moving up and to the right
 
             try{
                 Thread.sleep(30);
